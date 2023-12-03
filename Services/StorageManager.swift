@@ -1,6 +1,6 @@
 //
 //  StorageManager.swift
-//  Fullers memory list
+//  Personal Planner
 //
 //  Created by Ihor Dolhalov on 12.02.2023.
 //
@@ -11,7 +11,7 @@ class StorageManager {
     
     // MARK: - Core Data stack
     private let persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "FullersMemoryList")
+        let container = NSPersistentContainer(name: "Personal Planner")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

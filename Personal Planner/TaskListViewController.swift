@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Fullers memory list
+//  Personal Planner
 //
 //  Created by Ihor Dolhalov on 05.02.2023.
 //
@@ -11,6 +11,11 @@ import CoreData
 class TaskListViewController: UITableViewController {
 
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var mainPhotoImage: UIImageView!
+    
+    
     private var fetchedResultsController = StorageManager.shared.getFetchedResultsController(
         entityName: "Task",
         keysForSort: ["isComplete", "date"]
@@ -30,8 +35,22 @@ class TaskListViewController: UITableViewController {
         super.viewDidLoad()
         fetchTasks()
         fetchedResultsController.delegate = self
-        // Do any additional setup after loading the view.
+        
+        // Починаємо блок для налаштування фото на основному екрані
+        activityIndicator.isHidden = true
+        //Detect that MainPhotoImage was tapped
+        let tapGestureRecognizerImage = UITapGestureRecognizer(target: self, action: #selector(MainPhotoImageTapped))
+        mainPhotoImage.isUserInteractionEnabled = true
+        mainPhotoImage.addGestureRecognizer(tapGestureRecognizerImage)
+            guard let data = UserDefaults.standard.data(forKey: "MainPhoto") else {
+                print ("No data in UsedDefaults")
+                return }
+             let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
+        mainPhotoImage.image = UIImage(data: decoded)
+        
     }
+    
+  
     
     
     private func setupNavigationBar() {
@@ -63,10 +82,10 @@ class TaskListViewController: UITableViewController {
 
     private func setContentForCell(with task: Task?) -> UIListContentConfiguration {
            var content = UIListContentConfiguration.cell()
-           
-           content.textProperties.font = UIFont(
-               name: "Avenir Next Medium", size: 23
-           ) ?? UIFont.systemFont(ofSize: 23)
+        
+            //    content.textProperties.font = UIFont(
+         //      name: "Avenir Next Medium", size: 20
+         //  ) ?? UIFont.systemFont(ofSize: 20)
            
         content.textProperties.color = .darkGray
         content.text = task?.title
@@ -88,6 +107,7 @@ class TaskListViewController: UITableViewController {
             }
         }
     
+        //Чтобы пометить задачу как выполненную будем перечеркивать её название
     private func strikeThrough(string: String, _ isStrikeThrough: Bool) -> NSAttributedString {
             isStrikeThrough
                 ? NSAttributedString(
@@ -113,6 +133,10 @@ class TaskListViewController: UITableViewController {
 
 
 extension TaskListViewController {
+    
+   /* override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 35 // Set the desired height for the specific row
+    } */
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let doneAction = UIContextualAction(style: .normal, title: "Done") { _, _, isDone in // 1
@@ -194,4 +218,61 @@ extension TaskListViewController: NSFetchedResultsControllerDelegate {
             }
             return nil
         }
+}
+
+// MARK: - Work with the main photo
+
+extension TaskListViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    // Работа с фото на главном екране
+    
+    func openPhotoGallery() {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = true
+            present(imagePicker, animated: true, completion: nil)
+      
+    } //функція вибора фото
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        picker.dismiss(animated: true, completion: nil)
+
+        if let selectedImage = info[.originalImage] as? UIImage {
+            mainPhotoImage.image = selectedImage
+            
+            guard let data = selectedImage.jpegData(compressionQuality: 1) else {
+                print("Failed to save data from jpeg")
+                return }
+            
+            let encoded = try! PropertyListEncoder().encode(data)
+            print("encoded is")
+            UserDefaults.standard.set(encoded, forKey: "MainPhoto")
+            print("UserDefaults was set")
+        }
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true) {
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+
+        }
+    }
+
+  
+
+    
+    @objc func MainPhotoImageTapped() {
+           // Handle the tap on the UIImageView here
+           print("Image tapped!")
+        openPhotoGallery()
+
+       }
+    
+    
 }

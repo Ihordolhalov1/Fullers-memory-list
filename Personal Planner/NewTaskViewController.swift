@@ -1,6 +1,6 @@
 //
 //  NewTaskViewController.swift
-//  Fullers memory list
+//  Personal Planner
 //
 //  Created by Ihor Dolhalov on 05.02.2023.
 //
@@ -59,9 +59,13 @@ class NewTaskViewController: UIViewController {
 
 // MARK: - Text view delegate
 extension NewTaskViewController: UITextViewDelegate {
+    
+    
+
+    
     func textViewDidChangeSelection(_ textView: UITextView) {
         if doneButton.isHidden { // 1
-            textView.text.removeAll() // 2
+        //   textView.text.removeAll() // 2
             doneButton.isHidden = false // 3
             
             UIView.animate(withDuration: 0.3) { // 4

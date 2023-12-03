@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AWE-sC-Ud6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AWE-sC-Ud6">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Fuller's memory list-->
+        <!--What to do/What to buy-->
         <scene sceneID="RhK-nO-7j1">
             <objects>
-                <tableViewController id="XTV-k0-Yih" customClass="TaskListViewController" customModule="Fullers_memory_list" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="XTV-k0-Yih" customClass="TaskListViewController" customModule="Personal_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="xof-jN-vFo">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainPhoto" id="eT1-mv-YaS">
-                            <rect key="frame" x="0.0" y="135.66666793823242" width="393" height="612"/>
+                        <activityIndicatorView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="q9z-A0-leF" userLabel="activityIndicator">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                        <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.rectangle" catalog="system" id="eT1-mv-YaS">
+                            <rect key="frame" x="0.0" y="179.66666793823242" width="393" height="609"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="task" textLabel="xTw-9U-O0d" style="IBUITableViewCellStyleDefault" id="Po6-9k-Tzq">
-                                <rect key="frame" x="0.0" y="50" width="393" height="57.666667938232422"/>
+                                <rect key="frame" x="0.0" y="94" width="393" height="57.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Po6-9k-Tzq" id="fgJ-AI-oOj">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="57.666667938232422"/>
@@ -53,7 +57,7 @@
                             <outlet property="delegate" destination="XTV-k0-Yih" id="WuK-bb-Uul"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Fuller's memory list" id="E9M-N1-DXO">
+                    <navigationItem key="navigationItem" title="What to do/What to buy" id="E9M-N1-DXO" userLabel="What to do/What to buy">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ffk-2r-gb2">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -61,6 +65,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="q9z-A0-leF" id="w2s-rl-wsd"/>
+                        <outlet property="mainPhotoImage" destination="eT1-mv-YaS" id="Azn-lR-bMY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L25-ia-b4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,15 +77,15 @@
         <!--New Task View Controller-->
         <scene sceneID="Kld-zd-oz7">
             <objects>
-                <viewController id="QCV-rM-TMB" customClass="NewTaskViewController" customModule="Fullers_memory_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QCV-rM-TMB" customClass="NewTaskViewController" customModule="Personal_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uxs-FO-bew">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-wX-pdU">
-                                <rect key="frame" x="16" y="75" width="361" height="257"/>
+                                <rect key="frame" x="16" y="16" width="361" height="276.33333333333331"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a task" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avm-TB-rWR" userLabel="Create a task">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not forget..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avm-TB-rWR" userLabel="Create a task">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Rjp-tO-fUQ"/>
@@ -86,8 +94,8 @@
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" text="New task... " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qRy-k1-pRx">
-                                        <rect key="frame" x="0.0" y="33" width="361" height="224"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qRy-k1-pRx">
+                                        <rect key="frame" x="0.0" y="33.000000000000014" width="361" height="243.33333333333337"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" systemColor="linkColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -99,7 +107,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aGt-Dn-7Ae">
-                                <rect key="frame" x="16" y="728.66666666666663" width="361" height="34.333333333333371"/>
+                                <rect key="frame" x="16" y="787.66666666666663" width="361" height="34.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hN3-bS-La9">
                                         <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="34.333333333333336"/>
@@ -124,7 +132,7 @@
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="8"/>
@@ -182,18 +190,18 @@
         <segue reference="WWO-2n-aut"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="mainPhoto" width="1600" height="1200"/>
+        <image name="person.crop.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Fullers memory list
+//  Personal Planner
 //
 //  Created by Ihor Dolhalov on 05.02.2023.
 //

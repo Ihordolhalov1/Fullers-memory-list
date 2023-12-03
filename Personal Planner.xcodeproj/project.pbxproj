@@ -14,12 +14,12 @@
 		5D1497462990425500142BCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D1497452990425500142BCB /* Assets.xcassets */; };
 		5D1497492990425500142BCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1497472990425500142BCB /* LaunchScreen.storyboard */; };
 		5D14975129904F0A00142BCB /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14975029904F0A00142BCB /* NewTaskViewController.swift */; };
-		5D20784729996D8E002B84BD /* FullersMemoryList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D20784529996D8E002B84BD /* FullersMemoryList.xcdatamodeld */; };
+		5D20784729996D8E002B84BD /* Personal Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D20784529996D8E002B84BD /* Personal Planner.xcdatamodeld */; };
 		5D20784A29996EA7002B84BD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20784929996EA7002B84BD /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5D1497392990425400142BCB /* Fullers memory list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fullers memory list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D1497392990425400142BCB /* Personal Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Personal Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D14973C2990425400142BCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D14973E2990425400142BCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5D1497402990425400142BCB /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				5D20784829996E7A002B84BD /* Services */,
-				5D14973B2990425400142BCB /* Fullers memory list */,
+				5D14973B2990425400142BCB /* Personal Planner */,
 				5D14973A2990425400142BCB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,12 +55,12 @@
 		5D14973A2990425400142BCB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D1497392990425400142BCB /* Fullers memory list.app */,
+				5D1497392990425400142BCB /* Personal Planner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5D14973B2990425400142BCB /* Fullers memory list */ = {
+		5D14973B2990425400142BCB /* Personal Planner */ = {
 			isa = PBXGroup;
 			children = (
 				5D20784429996CBC002B84BD /* Models */,
@@ -73,13 +73,13 @@
 				5D1497472990425500142BCB /* LaunchScreen.storyboard */,
 				5D14974A2990425500142BCB /* Info.plist */,
 			);
-			path = "Fullers memory list";
+			path = "Personal Planner";
 			sourceTree = "<group>";
 		};
 		5D20784429996CBC002B84BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5D20784529996D8E002B84BD /* FullersMemoryList.xcdatamodeld */,
+				5D20784529996D8E002B84BD /* Personal Planner.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5D1497382990425400142BCB /* Fullers memory list */ = {
+		5D1497382990425400142BCB /* Personal Planner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5D14974D2990425500142BCB /* Build configuration list for PBXNativeTarget "Fullers memory list" */;
+			buildConfigurationList = 5D14974D2990425500142BCB /* Build configuration list for PBXNativeTarget "Personal Planner" */;
 			buildPhases = (
 				5D1497352990425400142BCB /* Sources */,
 				5D1497362990425400142BCB /* Frameworks */,
@@ -107,9 +107,9 @@
 			);
 			dependencies = (
 			);
-			name = "Fullers memory list";
+			name = "Personal Planner";
 			productName = "Fullers memory list";
-			productReference = 5D1497392990425400142BCB /* Fullers memory list.app */;
+			productReference = 5D1497392990425400142BCB /* Personal Planner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -120,14 +120,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					5D1497382990425400142BCB = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = 5D1497342990425400142BCB /* Build configuration list for PBXProject "Fullers memory list" */;
+			buildConfigurationList = 5D1497342990425400142BCB /* Build configuration list for PBXProject "Personal Planner" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -140,7 +140,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5D1497382990425400142BCB /* Fullers memory list */,
+				5D1497382990425400142BCB /* Personal Planner */,
 			);
 		};
 /* End PBXProject section */
@@ -168,7 +168,7 @@
 				5D14975129904F0A00142BCB /* NewTaskViewController.swift in Sources */,
 				5D20784A29996EA7002B84BD /* StorageManager.swift in Sources */,
 				5D14973F2990425400142BCB /* SceneDelegate.swift in Sources */,
-				5D20784729996D8E002B84BD /* FullersMemoryList.xcdatamodeld in Sources */,
+				5D20784729996D8E002B84BD /* Personal Planner.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +230,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -290,6 +291,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -317,7 +319,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WXTVGCYAQM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Fullers memory list/Info.plist";
+				INFOPLIST_FILE = "Personal Planner/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -325,13 +327,14 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "personal.Fullers-memory-list";
+				PRODUCT_BUNDLE_IDENTIFIER = personal.PersonalPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -351,7 +354,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WXTVGCYAQM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Fullers memory list/Info.plist";
+				INFOPLIST_FILE = "Personal Planner/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -359,13 +362,14 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "personal.Fullers-memory-list";
+				PRODUCT_BUNDLE_IDENTIFIER = personal.PersonalPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -379,7 +383,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5D1497342990425400142BCB /* Build configuration list for PBXProject "Fullers memory list" */ = {
+		5D1497342990425400142BCB /* Build configuration list for PBXProject "Personal Planner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5D14974B2990425500142BCB /* Debug */,
@@ -388,7 +392,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5D14974D2990425500142BCB /* Build configuration list for PBXNativeTarget "Fullers memory list" */ = {
+		5D14974D2990425500142BCB /* Build configuration list for PBXNativeTarget "Personal Planner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5D14974E2990425500142BCB /* Debug */,
@@ -400,13 +404,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5D20784529996D8E002B84BD /* FullersMemoryList.xcdatamodeld */ = {
+		5D20784529996D8E002B84BD /* Personal Planner.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				5D20784629996D8E002B84BD /* FullersMemoryList.xcdatamodel */,
 			);
 			currentVersion = 5D20784629996D8E002B84BD /* FullersMemoryList.xcdatamodel */;
-			path = FullersMemoryList.xcdatamodeld;
+			path = "Personal Planner.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
